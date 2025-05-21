@@ -1,6 +1,5 @@
 import os
 import sys
-from typing import Any, Dict, List, Optional
 
 from dotenv import load_dotenv
 
@@ -33,14 +32,12 @@ if __name__ == "__main__":
         sys.exit(1)
 
     for remote_app in deployments:
-        remote_app = deployments[0]
         resource_id = remote_app.resource_name
         USER_ID = "123"
 
         print("\nCleaning up: Deleting all sessions...")
         delete_all_sessions(resource_id, USER_ID)
 
-        print("Cleanup finished!")
         print("-" * 50)
         print("All sessions deleted.")
 

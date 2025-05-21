@@ -11,6 +11,14 @@ from google.adk.tools import google_search
 linkedInModel = LiteLlm(model=os.environ.get("OPENAI_MODEL"))
 instagramModel = LiteLlm(model=os.environ.get("CLAUDE_MODEL"))
 
+print("Google GenAI Model:", os.environ.get("GOOGLE_GENAI_MODEL"))
+print("Google GenAI Use VertexAI:", os.environ.get("GOOGLE_GENAI_USE_VERTEXAI"))
+print("OpenAI Model:", os.environ.get("OPENAI_MODEL"))
+print("Claude Model:", os.environ.get("CLAUDE_MODEL"))
+print("OPENAI_API_KEY:", os.environ.get("OPENAI_API_KEY"))
+print("GOOGLE_API_KEY:", os.environ.get("GOOGLE_API_KEY"))
+print("ANTHROPIC_API_KEY:", os.environ.get("ANTHROPIC_API_KEY"))
+
 researchAgent = Agent(
     name="ResearchAgent",
     model=os.environ.get("GOOGLE_GENAI_MODEL"),

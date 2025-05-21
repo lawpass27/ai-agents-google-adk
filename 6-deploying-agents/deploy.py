@@ -32,6 +32,15 @@ remote_app = agent_engines.create(
         "pydantic",
         "python-dotenv",
     ],
+    env_vars=[
+        "GOOGLE_API_KEY",
+        "OPENAI_API_KEY",
+        "ANTHROPIC_API_KEY",
+        "GOOGLE_GENAI_USE_VERTEXAI",
+        "CLAUDE_MODEL",
+        "OPENAI_MODEL",
+        "GOOGLE_GENAI_MODEL",
+    ],
     extra_packages=["./social_posts_agent"],
 )
 

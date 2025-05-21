@@ -47,10 +47,11 @@ if __name__ == "__main__":
     print("\nListing sessions...")
     sessions = list_sessions(resource_id, user_id)
     print(f"sessions: {sessions}")
+
     if not sessions:
         print(f"No sessions found. Creating session for user {user_id}...")
         session = create_session(resource_id, user_id)
-        time.sleep(1)  # Small delay to ensure session is registered
+        time.sleep(1)
 
         if not session:
             print("Failed to create session. Exiting.")
@@ -64,7 +65,7 @@ if __name__ == "__main__":
         # Get the first session ID
         session_id = session["id"]
         print(f"Using existing session ID: {session_id}")
-
+        # Get the session object
     # Get session details
     print("\nGetting session details...")
     session_info = get_session(resource_id, user_id, session_id)
@@ -74,13 +75,14 @@ if __name__ == "__main__":
         sys.exit(1)
 
     print("\nSending message...")
+
     send_message(
         resource_id,
         user_id,
         session_id,
-        "What did I ask you to do? Just say it, don't do anything else",
+        message="Create a post for what's new in Angular v20?",
     )
 
     # Delete the session we created
-    print("\nDeleting session...")
-    delete_session(resource_id, user_id, session_id)
+    # print("\nDeleting session...")
+    # delete_session(resource_id, user_id, session_id)
